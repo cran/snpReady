@@ -12,9 +12,12 @@ G.matrix <- function(M, method=c("VanRaden", "UAR", "UARadj", "GK"), format=c("w
   if(missing(format))
     stop("Format argument is missing")
   
-  N <- nrow(M) 
-  m <- ncol(M) 
+  N <- nrow(M)
+  m <- ncol(M)
   p <- colSums(M)/(2*N)
+  
+  if(any(p == 0 | p == 1))
+    stop("Monomorphic markers are no accepted")
 
   WWG <- function(M, p){
     w <- scale(x = M, center = T, scale = F)
@@ -87,10 +90,10 @@ G.matrix <- function(M, method=c("VanRaden", "UAR", "UARadj", "GK"), format=c("w
   }
   
   if(method == "GK"){
-    w <- scale(x = M, center = T, scale = F)
+    w <- scale(x = M, center = T, scale = T)
     D <- as.matrix(dist(w)) ^ 2
-    if(quantile(D, 0.05) == 0)
-      stop("Was not possible to compute the 5% quantile for the distance matrix")
+    if(quantile(D, 0.5) == 0)
+      stop("Was not possible to compute the 50% quantile for the distance matrix")
     GK <- exp(-D / quantile(D, 0.05))
     
     if(format == "long")

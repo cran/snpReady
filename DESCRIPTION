@@ -1,6 +1,6 @@
 Package: snpReady
-Version: 0.9.3
-Date: 2017-07-25
+Version: 0.9.4
+Date: 2017-10-27
 Authors@R: c(
     person("Italo", "Granato", email="italo.granato@gmail.com", role = c("aut", "cre")),
     person("Roberto", "Fritsche-Neto", email="roberto.neto@usp.br", role =c("aut", "ths"))
@@ -15,9 +15,9 @@ RoxygenNote: 6.0.1
 Suggests: knitr, rmarkdown, reshape2
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2017-08-02 16:45:48 UTC; Italo Granato
+Packaged: 2017-10-27 15:58:37 UTC; Italo Granato
 Author: Italo Granato [aut, cre],
   Roberto Fritsche-Neto [aut, ths]
 Maintainer: Italo Granato <italo.granato@gmail.com>
 Repository: CRAN
-Date/Publication: 2017-08-02 18:43:49 UTC
+Date/Publication: 2017-10-27 16:10:32 UTC
